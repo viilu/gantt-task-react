@@ -70,6 +70,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   onDelete,
   onSelect,
   onExpanderClick,
+  allowProjectDateChange,
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const taskListRef = useRef<HTMLDivElement>(null);
@@ -436,6 +437,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     onClick,
     onClickLine,
     onDelete,
+    allowProjectDateChange
   };
 
   const tableProps: TaskListProps = {

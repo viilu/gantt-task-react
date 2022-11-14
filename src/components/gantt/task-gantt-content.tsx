@@ -56,6 +56,7 @@ export const TaskGanttContent: React.FC<TaskGanttContentProps> = ({
   onClick,
   onClickLine,
   onDelete,
+  allowProjectDateChange,
 }) => {
   const point = svg?.current?.createSVGPoint();
   const [xStep, setXStep] = useState(0);
@@ -285,6 +286,7 @@ export const TaskGanttContent: React.FC<TaskGanttContentProps> = ({
         {tasks.map(task => {
           return (
             <TaskItem
+              allowProjectDateChange={allowProjectDateChange}
               task={task}
               arrowIndent={arrowIndent}
               taskHeight={taskHeight}
