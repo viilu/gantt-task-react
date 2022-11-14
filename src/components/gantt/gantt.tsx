@@ -66,6 +66,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   onProgressChange,
   onDoubleClick,
   onClick,
+  onClickLine,
   onDelete,
   onSelect,
   onExpanderClick,
@@ -433,6 +434,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     onProgressChange,
     onDoubleClick,
     onClick,
+    onClickLine,
     onDelete,
   };
 

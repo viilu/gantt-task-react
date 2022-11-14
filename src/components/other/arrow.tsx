@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BarTask } from "../../types/bar-task";
 import { Link } from "../../types/public-types";
 
@@ -9,6 +9,7 @@ type ArrowProps = {
   taskHeight: number;
   arrowIndent: number;
   rtl: boolean;
+  onClickLine?: (tasks: BarTask[]) => void;
 };
 export const Arrow: React.FC<ArrowProps> = ({
   taskFrom,
@@ -17,9 +18,13 @@ export const Arrow: React.FC<ArrowProps> = ({
   taskHeight,
   arrowIndent,
   rtl,
+  onClickLine,
 }) => {
   let path: string;
   let trianglePoints: string;
+  const strokeWidthDefault = "1.5";
+  const [strokeWidth, setStrokeWidth] = useState<string>(strokeWidthDefault);
+  
   if (rtl) {
     [path, trianglePoints] = drownPathAndTriangleRTL(
       taskFrom,
@@ -38,9 +43,19 @@ export const Arrow: React.FC<ArrowProps> = ({
     );
   }
 
+  const clickLine = () => {
+    if (onClickLine) {
+      onClickLine([taskFrom, taskTo]);
+    }
+  }
+
   return (
-    <g className="arrow">
-      <path strokeWidth="1.5" d={path} fill="none" />
+    <g className="arrow" 
+      stroke={strokeWidth}
+      onMouseEnter={() => setStrokeWidth("2")} 
+      onMouseLeave={() => setStrokeWidth(strokeWidthDefault)} 
+      onClick={clickLine}>
+      <path strokeWidth={strokeWidth} d={path} fill="none" />
       <polygon points={trianglePoints} />
     </g>
   );
