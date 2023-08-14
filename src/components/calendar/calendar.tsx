@@ -42,7 +42,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.1}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -87,7 +87,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.1}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {quarter}
@@ -131,7 +131,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={bottomValue + date.getFullYear()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.1}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -184,7 +184,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.1}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
