@@ -131,7 +131,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={bottomValue + date.getFullYear()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.2}
+          x={columnWidth * i + columnWidth * 0.5}
           className={styles.calendarBottomText}
         >
           {bottomValue}
