@@ -124,9 +124,9 @@ export const GridBody: React.FC<GridBodyProps> = ({
       );
       todayCircle = (
         <circle
-          cx={tickX - adjustment}
+          cx={tickX - adjustment + 1}
           cy={0}
-          r={8}
+          r={4}
           fill={todayColor}
         />
       );
@@ -151,9 +151,9 @@ export const GridBody: React.FC<GridBodyProps> = ({
       );
       todayCircle = (
         <circle
-          cx={tickX - adjustment}
+          cx={tickX - adjustment + 1}
           cy={0}
-          r={8}
+          r={4}
           fill={todayColor}
         />
       );
