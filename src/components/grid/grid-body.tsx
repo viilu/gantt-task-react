@@ -114,9 +114,9 @@ export const GridBody: React.FC<GridBodyProps> = ({
       const adjustment = columnWidth / span * delta
       today = (
         <rect
-          x={tickX + adjustment}
+          x={tickX - adjustment}
           y={0}
-          width={4}
+          width={2}
           height={y}
           fill={todayColor}
         />
