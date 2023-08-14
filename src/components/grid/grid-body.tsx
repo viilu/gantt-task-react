@@ -63,7 +63,8 @@ export const GridBody: React.FC<GridBodyProps> = ({
   let tickX = 0;
   const ticks: ReactChild[] = [];
   const weekends: ReactChild[] = [];
-  let today: ReactChild = <rect />;
+  let todayLine: ReactChild = <rect />;
+  let todayCircle: ReactChild = <circle />;
 
   let span = 0
   if (dates.length > 1) {
@@ -112,12 +113,20 @@ export const GridBody: React.FC<GridBodyProps> = ({
     ) {
       const delta = date.valueOf() - now.valueOf()
       const adjustment = columnWidth / span * delta
-      today = (
+      todayLine = (
         <rect
           x={tickX - adjustment}
           y={0}
           width={2}
           height={y}
+          fill={todayColor}
+        />
+      );
+      todayCircle = (
+        <circle
+          cx={tickX - adjustment}
+          cy={0}
+          r={8}
           fill={todayColor}
         />
       );
@@ -129,12 +138,22 @@ export const GridBody: React.FC<GridBodyProps> = ({
       date.getTime() >= now.getTime() &&
       dates[i + 1].getTime() < now.getTime()
     ) {
-      today = (
+      const delta = date.valueOf() - now.valueOf()
+      const adjustment = columnWidth / span * delta
+      todayLine = (
         <rect
-          x={tickX + columnWidth}
+          x={tickX + columnWidth - adjustment}
           y={0}
           width={columnWidth}
           height={y}
+          fill={todayColor}
+        />
+      );
+      todayCircle = (
+        <circle
+          cx={tickX - adjustment}
+          cy={0}
+          r={8}
           fill={todayColor}
         />
       );
@@ -148,7 +167,8 @@ export const GridBody: React.FC<GridBodyProps> = ({
       <g className="rowLines">{rowLines}</g>
       <g className="ticks">{ticks}</g>
       <g className="weekends">{weekends}</g>
-      <g className="today">{today}</g>
+      <g className="todayLine">{todayLine}</g>
+      <g className="todayCircle">{todayCircle}</g>
     </g>
   );
 };
