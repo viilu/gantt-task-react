@@ -42,8 +42,8 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + 16}
-          className={styles.calendarBottomText}
+          x={columnWidth * i + 8}
+          className={styles.calendarBottomTextStart}
         >
           {bottomValue}
         </text>
@@ -88,8 +88,8 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + 16}
-          className={styles.calendarBottomText}
+          x={columnWidth * i + 8}
+          className={styles.calendarBottomTextStart}
         >
           {quarter}
         </text>
@@ -133,8 +133,8 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={bottomValue + date.getFullYear()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + 16}
-          className={styles.calendarBottomText}
+          x={columnWidth * i + 8}
+          className={styles.calendarBottomTextStart}
         >
           {bottomValue}
         </text>
@@ -187,8 +187,8 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + 16}
-          className={styles.calendarBottomText}
+          x={columnWidth * i + 8}
+          className={styles.calendarBottomTextStart}
         >
           {bottomValue}
         </text>
@@ -231,7 +231,7 @@ export const Calendar: React.FC<CalendarProps> = ({
           key={date.getTime()}
           y={headerHeight * 0.8}
           x={columnWidth * i + columnWidth * 0.5}
-          className={styles.calendarBottomText}
+          className={styles.calendarBottomTextMiddle}
         >
           {bottomValue}
         </text>
@@ -281,7 +281,7 @@ export const Calendar: React.FC<CalendarProps> = ({
           key={date.getTime()}
           y={headerHeight * 0.8}
           x={columnWidth * (i + +rtl)}
-          className={styles.calendarBottomText}
+          className={styles.calendarBottomTextMiddle}
           fontFamily={fontFamily}
         >
           {bottomValue}
@@ -327,7 +327,7 @@ export const Calendar: React.FC<CalendarProps> = ({
           key={date.getTime()}
           y={headerHeight * 0.8}
           x={columnWidth * (i + +rtl)}
-          className={styles.calendarBottomText}
+          className={styles.calendarBottomTextMiddle}
           fontFamily={fontFamily}
         >
           {bottomValue}
