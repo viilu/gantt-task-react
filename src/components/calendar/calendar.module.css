@@ -10,7 +10,7 @@
 }
 
 .calendarBottomTextMiddle {
-  text-anchor: start;
+  text-anchor: middle;
   fill: #333;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -36,7 +36,7 @@
 }
 
 .calendarTopTextMiddle {
-  text-anchor: start;
+  text-anchor: middle;
   fill: #555;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

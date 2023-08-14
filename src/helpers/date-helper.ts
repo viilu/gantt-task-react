@@ -195,7 +195,7 @@ export const seedDates = (
 
 export const getLocaleMonth = (date: Date, locale: string) => {
   let bottomValue = getCachedDateTimeFormat(locale, {
-    month: "long",
+    month: "short",
   }).format(date);
   bottomValue = bottomValue.replace(
     bottomValue[0],
