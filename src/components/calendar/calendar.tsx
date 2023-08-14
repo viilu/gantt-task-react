@@ -43,7 +43,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.5}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -88,7 +88,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.5}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {quarter}
@@ -132,7 +132,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={bottomValue + date.getFullYear()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.5}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -179,13 +179,13 @@ export const Calendar: React.FC<CalendarProps> = ({
         topValue = `${getLocaleMonth(date, locale)}, ${date.getFullYear()}`;
       }
       // bottom
-      const bottomValue = `W${getWeekNumberISO8601(date)}`;
+      const bottomValue = `${date.getDate()}`;
 
       bottomValues.push(
         <text
           key={date.getTime()}
           y={headerHeight * 0.8}
-          x={columnWidth * (i + +rtl)}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -221,9 +221,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     const dates = dateSetup.dates;
     for (let i = 0; i < dates.length; i++) {
       const date = dates[i];
-      const bottomValue = `${getLocalDayOfWeek(date, locale, "short")}, ${date
-        .getDate()
-        .toString()}`;
+      const bottomValue = `${date.getDate().toString()}`;
 
       bottomValues.push(
         <text
