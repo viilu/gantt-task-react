@@ -1,5 +1,16 @@
-.calendarBottomText {
-  text-anchor: middle;
+.calendarBottomTextStart {
+  text-anchor: start;
+  fill: #333;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.calendarBottomTextMiddle {
+  text-anchor: start;
   fill: #333;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -13,8 +24,19 @@
   stroke: #e6e4e4;
 }
 
-.calendarTopText {
-  text-anchor: middle;
+.calendarTopTextStart {
+  text-anchor: start;
+  fill: #555;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.calendarTopTextMiddle {
+  text-anchor: start;
   fill: #555;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

@@ -68,6 +68,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             y2Line={headerHeight}
             xText={xText}
             yText={topDefaultHeight * 0.9}
+            textAnchor="start"
           />
         );
       }
@@ -113,6 +114,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             y2Line={topDefaultHeight}
             xText={Math.abs(xText)}
             yText={topDefaultHeight * 0.9}
+            textAnchor="start"
           />
         );
       }
@@ -131,7 +133,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         <text
           key={bottomValue + date.getFullYear()}
           y={headerHeight * 0.8}
-          x={columnWidth * i + columnWidth * 0.1}
+          x={columnWidth * i + 16}
           className={styles.calendarBottomText}
         >
           {bottomValue}
@@ -157,6 +159,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             y2Line={topDefaultHeight}
             xText={xText}
             yText={topDefaultHeight * 0.9}
+            textAnchor="start"
           />
         );
       }
@@ -203,6 +206,7 @@ export const Calendar: React.FC<CalendarProps> = ({
               y2Line={topDefaultHeight}
               xText={columnWidth * i + columnWidth * weeksCount * 0.5}
               yText={topDefaultHeight * 0.9}
+              textAnchor="start"
             />
           );
         }
@@ -252,6 +256,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                 0.5
             }
             yText={topDefaultHeight * 0.9}
+            textAnchor="middle"
           />
         );
       }
@@ -297,6 +302,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             y2Line={topDefaultHeight}
             xText={columnWidth * i + ticks * columnWidth * 0.5}
             yText={topDefaultHeight * 0.9}
+            textAnchor="middle"
           />
         );
       }
@@ -344,6 +350,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             y2Line={topDefaultHeight}
             xText={columnWidth * (i + topPosition)}
             yText={topDefaultHeight * 0.9}
+            textAnchor="middle"
           />
         );
       }
