@@ -64,6 +64,12 @@ export const GridBody: React.FC<GridBodyProps> = ({
   const ticks: ReactChild[] = [];
   const weekends: ReactChild[] = [];
   let today: ReactChild = <rect />;
+
+  let span = 0
+  if (dates.length > 1) {
+    span = dates[1].valueOf() - dates[0].valueOf()
+  }
+
   for (let i = 0; i < dates.length; i++) {
     const date = dates[i];
     ticks.push(
@@ -104,11 +110,13 @@ export const GridBody: React.FC<GridBodyProps> = ({
           "millisecond"
         ).getTime() >= now.getTime())
     ) {
+      const delta = date.valueOf() - now.valueOf()
+      const adjustment = columnWidth / span * delta
       today = (
         <rect
-          x={tickX}
+          x={tickX + adjustment}
           y={0}
-          width={columnWidth}
+          width={4}
           height={y}
           fill={todayColor}
         />
